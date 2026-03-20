@@ -14,10 +14,12 @@ app = Flask(__name__)
 
 def klasifikuoti_moneta(spindulys: float, max_spindulys: float) -> tuple:
     ratio = spindulys / max_spindulys if max_spindulys > 0 else 0
-    if ratio >= 0.88:
-        return 2.0, "2 EUR", "#FFD700"
+    if ratio >= 0.85:
+        return 2.0, "2 EUR", (192,192,192)
+    elif ragio >= 0.60:
+        return 1.0, "1 EUR", (255, 215, 0)
     else:
-        return 1.0, "1 EUR", "#C0C0C0"
+        return 0.0, "nezinoma", (100, 100, 100)
 
 
 def aptikti_monetas(image_data: str) -> dict:
@@ -38,11 +40,11 @@ def aptikti_monetas(image_data: str) -> dict:
         blurred,
         cv2.HOUGH_GRADIENT,
         dp=1.2,
-        minDist=60,
-        param1=70,
-        param2=35,
-        minRadius=30,
-        maxRadius=150
+        minDist=40,
+        param1=50,
+        param2=30,
+        minRadius=20,
+        maxRadius=120
     )
 
     coins = []
