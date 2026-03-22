@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request, jsonify
 import base64
 import re
-import requests
+import requirements
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def aptikti_monetas(image_data: str) -> dict:
     """Priima base64 nuotrauką, grąžina aptiktų monetų duomenis."""
     image_data = re.sub(r'^data:image/\w+;base64,', '', image_data)
     
-    response = requests.post(
+    response = requirements.post(
         f"https://detect.roboflow.com/{MODEL_ID}",
         params={"api_key": API_KEY},
         data=image_data,
