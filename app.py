@@ -11,7 +11,7 @@ def aptikti_monetas(image_data: str) -> dict:
     """Priima base64 nuotrauką, grąžina aptiktų monetų duomenis."""
     image_data = re.sub(r'^data:image/\w+;base64,', '', image_data)
     
-    response = request.post(
+    response = requests.post(
         f"https://detect.roboflow.com/{MODEL_ID}",
         params={"api_key": API_KEY},
         data=image_data,
