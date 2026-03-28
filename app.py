@@ -24,10 +24,20 @@ def aptikti_monetas(image_data: str) -> dict:
     
     for p in result.get("predictions", []):
         label = p["class"]
-        value = float(label)
+        
+        if label == "200":
+            value = 2.0
+            display = "2 EUR"
+        elif label == "100":
+            value = 1.0
+            display = "1 EUR"
+        else:
+            value = float(label) / 100
+            display = f"{label} cent"
+        
         coins.append({
             "x": int(p["x"]), "y": int(p["y"]),
-            "label": label, "value": value
+            "label": display, "value": value
         })
         total += value
     
