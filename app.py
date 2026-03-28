@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 
 API_KEY = "8cpBNj2xGjLsIYv7sq7N"
-MODEL_ID = "euro-finder/1"
+MODEL_ID = "euro-coin-detector-nqnhr/1"
 
 def aptikti_monetas(image_data: str) -> dict:
     """Priima base64 nuotrauką, grąžina aptiktų monetų duomenis."""

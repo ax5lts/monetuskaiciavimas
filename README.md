@@ -1,4 +1,4 @@
-# 💰 Monetų Skaičiuoklė
+#  Monetų Skaičiuoklė
 
 Web aplikacija, kuri naudoja kamerą ir OpenCV atpažinti 1€ ir 2€ monetas realiuoju laiku.
 
@@ -36,7 +36,7 @@ Atidaryti naršyklėje: http://localhost:5000
 
 5. Spausti **Deploy** — po ~2 min svetainė veiks!
 
-> ⚠️ **Svarbu:** Kamera naršyklėje veikia tik per HTTPS.
+>  **Svarbu:** Kamera naršyklėje veikia tik per HTTPS.
 > Render automatiškai suteikia HTTPS, todėl viskas veiks.
 
 ---
